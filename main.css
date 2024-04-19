@@ -1,0 +1,101 @@
+:root {
+  --arrowFilter: invert(52%) sepia(1%) saturate(0%) hue-rotate(13deg)
+    brightness(96%);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.XViewer {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+}
+
+.XViewer-image-wrapper {
+  width: 70%;
+  margin: auto;
+}
+
+.XViewer-img {
+  width: 100%;
+  height: 100%;
+}
+
+.XViewer-arrow {
+  width: 40px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  filter: var(--arrowFilter);
+}
+
+.XViewer-arrow:hover {
+  filter: none;
+}
+
+.XViewer-arrow.rightArrow {
+  right: 0;
+}
+
+.XViewer-arrow.leftArrow {
+  left: 0;
+}
+
+.XViewer-close {
+  position: absolute;
+  top: 4%;
+  right: 4%;
+  width: 40px;
+  filter: var(--arrowFilter);
+}
+
+.XViewer-close:hover {
+  filter: none;
+}
+
+.XViewer-skipper-wrapper {
+  position: absolute;
+  bottom: 2em;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 1em;
+  display: flex;
+  flex-wrap: wrap;
+}
+.XViewer-skipper {
+  width: 20px;
+  height: 6px;
+  background-color: beige;
+  cursor: pointer;
+}
+
+.XViewer-skipper.current {
+  background-color: black;
+}
+
+.XViewer-skipper-end-class,
+.XViewer-skipper-end-class:hover {
+  filter: var(--arrowFilter);
+}
+
+@media (max-width: 646px) {
+  .XViewer-image-wrapper {
+    width: 100%;
+    height: 40vh;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .XViewer-skipper-wrapper {
+    display: none;
+  }
+}

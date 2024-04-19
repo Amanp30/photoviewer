@@ -1,0 +1,8 @@
+node_mudules
+public
+.vscode
+index.html
+shuffle.js
+webpack.config.js
+package-lock.json
+assets
